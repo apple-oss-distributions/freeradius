@@ -12,7 +12,7 @@
 	<false/>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/sbin/radiusd</string>
+		<string>/Applications/Server.app/Contents/ServerRoot/usr/sbin/radiusd</string>
 		<string>-sf</string>
 	</array>
 	<key>ServiceIPC</key>

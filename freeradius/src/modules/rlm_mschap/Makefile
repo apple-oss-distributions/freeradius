@@ -11,7 +11,7 @@ RLM_CFLAGS	= -F /System/Library/PrivateFrameworks
 RLM_LDFLAGS	=
 # libtool doesn't seem to pass the -F option to the linker so provide the full path to nt framework
 RLM_LIBS	= -framework OpenDirectory /System/Library/PrivateFrameworks/nt.framework/nt
-RLM_UTILS   	= smbencrypt
+RLM_UTILS   	= smbencrypt$(EXEEXT)
 RLM_INSTALL 	= smbencrypt-install
 
 # over-ride the previous assignment if we're not building anything
@@ -19,7 +19,7 @@ include ../rules.mak
 
 $(LT_OBJS): $(HEADERS)
 
-smbencrypt: smbencrypt.lo smbdes.lo $(LIBRADIUS)
+smbencrypt$(EXEEXT): smbencrypt.lo smbdes.lo $(LIBRADIUS)
 	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) $(RLM_LDFLAGS) \
 		-o $@ $^ $(RLM_LIBS) $(LIBS)
 
